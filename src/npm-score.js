@@ -68,7 +68,7 @@ async function getActualPackageReport(packagename) {
 
 //------------------------------------------------------------------------------
 
-function savePackageReport(filename) {
+function savePackageReport(filename, report) {
     fs.writeFileSync(filename, JSON.stringify(report, null, 2), 'utf-8');
 }
 
@@ -281,7 +281,7 @@ async function main() {
 
     // save report if specified
     if (args.save_report) {
-        savePackageReport(args.save_report);
+        savePackageReport(args.save_report, report);
     }
 
     // load reference score if specified
