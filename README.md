@@ -10,9 +10,9 @@ An utility to show package score according to [npms.io](https://npms.io/).
 
 npm-score allows to retrieve a npm package's search score determined by [npms.io](https://npms.io/). Features:
 
-- writing the score report to a JSON file
-- display a summary about the score
-- compare the current score to a previously saved report to see how a package improved
+- Write the score report to a JSON file.
+- Display a summary about the score.
+- Compare the current score to a previously saved report to see how a package improved.
 
 
 ## Installation
