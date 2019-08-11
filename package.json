@@ -1,6 +1,6 @@
 {
   "name": "npm-score",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility to show package score according to npms.io",
   "main": "src/npm-score.js",
   "bin": {
