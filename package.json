@@ -1,0 +1,33 @@
+{
+  "name": "npm-score",
+  "version": "1.0.0",
+  "description": "Utility to show package score according to npms.io",
+  "main": "src/npm-score.js",
+  "bin": {
+    "npm-score": "src/npm-score.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dapaulid/npm-score"
+  },
+  "keywords": [
+    "npm",
+    "npms",
+    "package",
+    "score",
+    "search"
+  ],
+  "author": "Daniel Pauli <dapaulid@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dapaulid/npm-score/issues"
+  },
+  "homepage": "https://github.com/dapaulid/npm-score#readme",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "chalk": "^2.4.2"
+  }
+}
