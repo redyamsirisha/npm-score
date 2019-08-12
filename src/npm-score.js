@@ -94,7 +94,8 @@ function outputScoreSummary(published_version, score, ref_score) {
     const rated_version = score.collected.metadata.version;
     const outdated = rated_version != published_version;
     output("published", published_version);
-    output("rated", rated_version);
+    output("rated", rated_version,
+        ref_score && ref_score.collected.metadata.version);
     const analyzed_at = new Date(score.analyzedAt);
     output("analyzed", moment(analyzed_at).fromNow());
     output("up-to-date", outdated ? "no" : "yes");
@@ -216,11 +217,20 @@ function percent(x) {
 
 //------------------------------------------------------------------------------
 
+function isPercent(x) {
+    return typeof x === 'string' && x.endsWith('%');
+}
+
+//------------------------------------------------------------------------------
+
 function diff(x, ref_x) {
-    const is_percent = typeof x === 'string' && x.endsWith('%');
+    const is_percent = isPercent(x);
     if (is_percent) {
         x = parseFloat(x.substr(0, x.length - 1));
         ref_x = parseFloat(ref_x.substr(0, ref_x.length - 1));
+    } else if (typeof ref_x !== 'number') {
+        // absolute value, include proper padding
+        return ref_x != null ? chalk.gray(ref_x) + '   ': null;
     }
     let d = x - ref_x;
     if (d > 0) {
@@ -245,9 +255,9 @@ function diff(x, ref_x) {
 //------------------------------------------------------------------------------
 
 function output(name, value, ref_value) {
-    const d = (ref_value != null) && diff(value, ref_value);
+    const d = diff(value, ref_value);
     console.log(padEnd(name, 16) + chalk.bold.gray(' : ') + padStart(value, 14), 
-        d ? padStart(d, 10) : '');
+        d != null ? padStart(d, 10) : '');
 }
 
 //------------------------------------------------------------------------------
