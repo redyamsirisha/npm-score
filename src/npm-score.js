@@ -314,7 +314,17 @@ async function main() {
     }
 
     // load reference score if specified
-    const ref_score = args.diff && loadPackageReport(args.diff).result;
+    let ref_score;
+    if (args.diff) {
+        // exists?
+        if (fs.existsSync(args.diff)) {
+            // yes -> load it
+            ref_score = loadPackageReport(args.diff).result;
+        } else {
+            // no -> trace warning
+            console.warn("Warning: cannot display differences, " + args.diff + " not found.");
+        }
+    }
 
     // get published package version from npm
     let published_version;
