@@ -23,6 +23,7 @@ const child_process = require('child_process');
 const argparse = require('argparse');
 const chalk = require('chalk');
 const stripAnsi = require('strip-ansi');
+const moment = require('moment');
 
 
 //------------------------------------------------------------------------------
@@ -95,8 +96,7 @@ function outputScoreSummary(published_version, score, ref_score) {
     output("published", published_version);
     output("rated", rated_version);
     const analyzed_at = new Date(score.analyzedAt);
-    output("analyzed on", analyzed_at.toLocaleDateString());
-    output("analyzed at", analyzed_at.toLocaleTimeString());
+    output("analyzed", moment(analyzed_at).fromNow());
     output("up-to-date", outdated ? "no" : "yes");
 
     // npm and GitHub info
@@ -126,7 +126,7 @@ function outputScoreSummary(published_version, score, ref_score) {
 
     // total score
     hrule('=');
-    output(chalk.bold("TOTAL SCORE"), (outdated ? chalk.red('outdated  ') : '') + percent(score.score.final),
+    output(chalk.bold("TOTAL SCORE"), (outdated ? chalk.bold.red('outdated  ') : '') + percent(score.score.final),
         ref_score && percent(ref_score.score.final));
     hrule('=');
 }
