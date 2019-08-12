@@ -130,6 +130,22 @@ function outputScoreSummary(published_version, score, ref_score) {
     hrule('=');
 }
 
+//------------------------------------------------------------------------------
+
+async function commitReport(filename) {
+    // check status
+    const status = await exec('git status --porcelain ' + filename);
+    if (status.startsWith('??')) {
+        // unversioned
+        // add and commit
+        await exec('git add ' + filename + ' && git commit -m "Add package score." ' + filename);
+    } else if (status.startsWith('M')) {
+        // modified
+        await exec('git commit -m "Update package score." ' + filename);
+    } else {
+        // unchanged, or unkown
+    }
+}
 
 //------------------------------------------------------------------------------
 // helpers
@@ -267,7 +283,12 @@ async function main() {
         nargs: '?',
         constant: DEFAULT_SCORE_FILE,
         help: 'Report for comparison. Default: ' + DEFAULT_SCORE_FILE
+    });
+    parser.addArgument(['-c', '--commit'], {
+        action: 'storeTrue',
+        help: 'Commit saved report.'
     });    
+    
     const args = parser.parseArgs();
 
     // get package name
@@ -282,6 +303,10 @@ async function main() {
     // save report if specified
     if (args.save_report) {
         savePackageReport(args.save_report, report);
+        // commit report if specified
+        if (args.commit) {
+            await commitReport(args.save_report);
+        }
     }
 
     // load reference score if specified
