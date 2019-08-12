@@ -22,6 +22,7 @@ const child_process = require('child_process');
 // third-party
 const argparse = require('argparse');
 const chalk = require('chalk');
+const stripAnsi = require('strip-ansi');
 
 
 //------------------------------------------------------------------------------
@@ -125,7 +126,7 @@ function outputScoreSummary(published_version, score, ref_score) {
 
     // total score
     hrule('=');
-    output("total score", (outdated ? 'OUTDATED ' : '') + percent(score.score.final),
+    output(chalk.bold("TOTAL SCORE"), (outdated ? chalk.red('outdated  ') : '') + percent(score.score.final),
         ref_score && percent(ref_score.score.final));
     hrule('=');
 }
@@ -245,8 +246,22 @@ function diff(x, ref_x) {
 
 function output(name, value, ref_value) {
     const d = (ref_value != null) && diff(value, ref_value);
-    console.log(name.padEnd(16) + chalk.bold.gray(' : ') + ("" + value).padStart(14), 
-        d ? ("" + d).padStart(18) : ''); // needs more padding than expected due to color coding
+    console.log(padEnd(name, 16) + chalk.bold.gray(' : ') + padStart(value, 14), 
+        d ? padStart(d, 10) : '');
+}
+
+//------------------------------------------------------------------------------
+
+function padStart(s, n) {
+    s = "" + s;
+    return s.padStart(n - stripAnsi(s).length + s.length);
+}
+
+//------------------------------------------------------------------------------
+
+function padEnd(s, n) {
+    s = "" + s;
+    return s.padEnd(n - stripAnsi(s).length + s.length);
 }
 
 //------------------------------------------------------------------------------
