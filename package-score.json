@@ -1,0 +1,206 @@
+{
+  "query": "https://api.npms.io/v2/package/npm-score",
+  "result": {
+    "analyzedAt": "2019-08-11T21:15:24.236Z",
+    "collected": {
+      "metadata": {
+        "name": "npm-score",
+        "scope": "unscoped",
+        "version": "1.0.3",
+        "description": "Utility to show package score according to npms.io",
+        "keywords": [
+          "npm",
+          "npms",
+          "package",
+          "score",
+          "search"
+        ],
+        "date": "2019-08-11T20:47:24.416Z",
+        "author": {
+          "name": "Daniel Pauli",
+          "email": "dapaulid@gmail.com"
+        },
+        "publisher": {
+          "username": "dapaulid",
+          "email": "dapaulid+npm@gmail.com"
+        },
+        "maintainers": [
+          {
+            "username": "dapaulid",
+            "email": "dapaulid+npm@gmail.com"
+          }
+        ],
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/dapaulid/npm-score.git"
+        },
+        "links": {
+          "npm": "https://www.npmjs.com/package/npm-score",
+          "homepage": "https://github.com/dapaulid/npm-score#readme",
+          "repository": "https://github.com/dapaulid/npm-score",
+          "bugs": "https://github.com/dapaulid/npm-score/issues"
+        },
+        "license": "MIT",
+        "dependencies": {
+          "argparse": "^1.0.10",
+          "chalk": "^2.4.2"
+        },
+        "releases": [
+          {
+            "from": "2019-07-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-05-13T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-02-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2018-08-11T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2017-08-11T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          }
+        ],
+        "hasTestScript": true,
+        "readme": "[![NPM version](https://badge.fury.io/js/npm-score.svg)](https://www.npmjs.com/package/npm-score)\n\n# npm-score\nAn utility to show package score according to [npms.io](https://npms.io/).\n\n![ScreenShot](https://raw.githubusercontent.com/dapaulid/npm-score/master/doc/screenshot.png)\n\n\n## Purpose\n\nnpm-score allows to retrieve a npm package's search score determined by [npms.io](https://npms.io/). Features:\n\n- Write the score report to a JSON file.\n- Display a summary about the score.\n- Compare the current score to a previously saved report to see how a package improved.\n\n\n## Installation\n```\nnpm install -g npm-score\n```\n\n## Usage\n```\nusage: npm-score [-h] [-v] [-s [file]] [-d [file]] [package]\n\nUtility to show package score according to npms.io\n\nPositional arguments:\n  package               Name of package to score. Use current package when \n                        omitted.\n\nOptional arguments:\n  -h, --help            Show this help message and exit.\n  -v, --version         Show program's version number and exit.\n  -s [file], --save-report [file]\n                        Save report to file. Default: package-score.json\n  -d [file], --diff [file]\n                        Report for comparison. Default: package-score.json\n```"
+      },
+      "npm": {
+        "downloads": [
+          {
+            "from": "2019-08-10T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-08-04T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-07-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-05-13T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-02-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2018-08-11T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          }
+        ],
+        "dependentsCount": 0,
+        "starsCount": 0
+      },
+      "github": {
+        "starsCount": 0,
+        "forksCount": 0,
+        "subscribersCount": 1,
+        "issues": {
+          "count": 0,
+          "openCount": 0,
+          "distribution": {
+            "3600": 0,
+            "10800": 0,
+            "32400": 0,
+            "97200": 0,
+            "291600": 0,
+            "874800": 0,
+            "2624400": 0,
+            "7873200": 0,
+            "23619600": 0,
+            "70858800": 0,
+            "212576400": 0
+          },
+          "isDisabled": false
+        },
+        "contributors": [
+          {
+            "username": "dapaulid",
+            "commitsCount": 7
+          }
+        ],
+        "commits": [
+          {
+            "from": "2019-08-04T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-07-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-05-13T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2019-02-12T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          },
+          {
+            "from": "2018-08-11T00:00:00.000Z",
+            "to": "2019-08-11T00:00:00.000Z",
+            "count": 0
+          }
+        ]
+      },
+      "source": {
+        "files": {
+          "readmeSize": 1238,
+          "testsSize": 0
+        }
+      }
+    },
+    "evaluation": {
+      "quality": {
+        "carefulness": 0.71,
+        "tests": 0,
+        "health": 1,
+        "branding": 0
+      },
+      "popularity": {
+        "communityInterest": 2,
+        "downloadsCount": 0,
+        "downloadsAcceleration": 0,
+        "dependentsCount": 0
+      },
+      "maintenance": {
+        "releasesFrequency": 0.9,
+        "commitsFrequency": 0.9,
+        "openIssues": 0.9,
+        "issuesDistribution": 0.9
+      }
+    },
+    "score": {
+      "final": 0.508384659837956,
+      "detail": {
+        "quality": 0.5116026390581601,
+        "popularity": 0.01416981326345929,
+        "maintenance": 0.9998412385094206
+      }
+    }
+  }
+}
