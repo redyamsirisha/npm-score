@@ -287,6 +287,10 @@ async function main() {
     parser.addArgument(['-c', '--commit'], {
         action: 'storeTrue',
         help: 'Commit saved report.'
+    });
+    parser.addArgument(['-q', '--quiet'], {
+        action: 'storeTrue',
+        help: 'Quiet mode.'
     });    
     
     const args = parser.parseArgs();
@@ -321,7 +325,9 @@ async function main() {
     }
 
     // output summary
-    outputScoreSummary(published_version, report.result, ref_score);
+    if (!args.quiet) {
+        outputScoreSummary(published_version, report.result, ref_score);
+    }
 }
 
 // entry point
