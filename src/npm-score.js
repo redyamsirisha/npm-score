@@ -224,7 +224,7 @@ function isPercent(x) {
 //------------------------------------------------------------------------------
 
 function diff(x, ref_x) {
-    const is_percent = isPercent(x);
+    const is_percent = isPercent(ref_x);
     if (is_percent) {
         x = parseFloat(x.substr(0, x.length - 1));
         ref_x = parseFloat(ref_x.substr(0, ref_x.length - 1));
